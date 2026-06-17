@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string convertTo24Hour(const string &time12) {
+    int hour = (time12[0] - '0') * 10 + (time12[1] - '0');
+    int minute = (time12[3] - '0') * 10 + (time12[4] - '0');
+    int second = (time12[6] - '0') * 10 + (time12[7] - '0');
+    string period = time12.substr(8, 2); 
+    
+    if (period == "AM") {
+        if (hour == 12) hour = 0; 
+    } else { 
+        if (hour != 12) hour += 12; 
+    }
+    
+    string hourStr = (hour < 10 ? "0" : "") + to_string(hour);
+    string minuteStr = (minute < 10 ? "0" : "") + to_string(minute);
+    string secondStr = (second < 10 ? "0" : "") + to_string(second);
+    
+    return hourStr + ":" + minuteStr + ":" + secondStr;
+}
+
+int main() {
+    string time12;
+    
+    cout << "Enter time in 12-hour format (hh:mm:ssAM or hh:mm:ssPM): ";
+    cin >> time12;
+    
+    string time24 = convertTo24Hour(time12);
+    cout << "24-hour (military) time: " << time24 << endl;
+    
+    return 0;
+}
