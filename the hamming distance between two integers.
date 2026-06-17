@@ -1,0 +1,29 @@
+#include <iostream>
+
+int hammingDistance(int x, int y) {
+    int xorResult = x ^ y; 
+    int distance = 0;
+
+    while (xorResult) {
+        xorResult &= (xorResult - 1); 
+        distance++;
+    }
+
+    return distance;
+}
+
+int main() {
+    int num1, num2;
+    
+    std::cout << "Enter first integer: ";
+    std::cin >> num1;
+    
+    std::cout << "Enter second integer: ";
+    std::cin >> num2;
+    
+    int distance = hammingDistance(num1, num2);
+    std::cout << "The Hamming distance between " << num1 << " and " << num2
+              << " is: " << distance << std::endl;
+    
+    return 0;
+}
