@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int lcmOfThree(int a, int b, int c) {
+    return lcm(lcm(a, b), c);
+}
+
+int main() {
+    int num1, num2, num3;
+
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+
+    int result = lcmOfThree(num1, num2, num3);
+    cout << "LCM of " << num1 << ", " << num2 << ", and " << num3 << " is: " << result << endl;
+
+    return 0;
+}
