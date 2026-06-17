@@ -1,0 +1,24 @@
+ #include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+
+    cout << "Enter a positive integer: ";
+    if (!(cin >> N) || N <= 0) { 
+        cout << "Invalid input. Please enter a positive integer.\n";
+        return 1;
+    }
+
+    for (int i = 0; i < N; i++) {
+        char ch = (i % 2 == 0) ? '1' : '0'; 
+        int count = N - i;                  
+
+        for (int j = 0; j < count; j++) {
+            cout << ch;
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
