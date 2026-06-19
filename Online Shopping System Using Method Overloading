@@ -1,0 +1,28 @@
+public class Main {
+
+    public static void purchase(String name) {
+        System.out.println("Product: " + name);
+        System.out.println(); 
+    }
+
+    public static void purchase(String name, int quantity) {
+        System.out.println("Product: " + name);
+        System.out.println("Quantity: " + quantity);
+        System.out.println();
+    }
+
+    public static void purchase(String name, int quantity, String discountCode) {
+        System.out.println("Product: " + name);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Discount Code: " + discountCode);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Main.purchase("Laptop");
+
+        Main.purchase("Laptop", 2);
+
+        Main.purchase("Laptop", 2, "SAVE10");
+    }
+}
