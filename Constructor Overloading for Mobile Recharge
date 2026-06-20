@@ -1,0 +1,34 @@
+public class MobileRecharge {
+    private int amount;
+    private int validity;
+    private String dataPack;
+
+    public MobileRecharge(int amount) {
+        this.amount = amount;
+        System.out.println("Recharge Amount: " + this.amount);
+    }
+
+    public MobileRecharge(int amount, int validity) {
+        this.amount = amount;
+        this.validity = validity;
+        System.out.println("Recharge Amount: " + this.amount);
+        System.out.println("Validity: " + this.validity + " Days");
+    }
+
+    public MobileRecharge(int amount, int validity, String dataPack) {
+        this.amount = amount;
+        this.validity = validity;
+        this.dataPack = dataPack;
+        System.out.println("Recharge Amount: " + this.amount);
+        System.out.println("Validity: " + this.validity + " Days");
+        System.out.println("Data Pack: " + this.dataPack);
+    }
+
+    public static void main(String[] args) {
+        MobileRecharge plan1 = new MobileRecharge(199);
+        
+        MobileRecharge plan2 = new MobileRecharge(299, 28);
+        
+         MobileRecharge plan3 = new MobileRecharge(399, 56, "2GB/day");
+    }
+}
