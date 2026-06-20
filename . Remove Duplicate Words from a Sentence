@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.LinkedHashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        if (scanner.hasNextLine()) {
+            String sentence = scanner.nextLine();
+
+            String[] words = sentence.split("\\s+");
+
+            LinkedHashSet<String> uniqueWords = new LinkedHashSet<>();
+
+            for (String word : words) {
+                uniqueWords.add(word);
+            }
+
+            String result = String.join(" ", uniqueWords);
+
+            System.out.println(result);
+        }
+
+        scanner.close();
+    }
+}
